@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcy.server.mapper.EmployeeMapper">
+
+    <resultMap id="BaseResultMap" type="com.hcy.server.model.entity.EmployeeEntity">
+        <!--@Table t_employee-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="gender" column="gender" jdbcType="VARCHAR"/>
+        <result property="birthday" column="birthday" jdbcType="OTHER"/>
+        <result property="idcard" column="idCard" jdbcType="VARCHAR"/>
+        <result property="wedlock" column="wedlock" jdbcType="OTHER"/>
+        <result property="nationid" column="nationId" jdbcType="INTEGER"/>
+        <result property="nativeplace" column="nativePlace" jdbcType="VARCHAR"/>
+        <result property="politicid" column="politicId" jdbcType="INTEGER"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="departmentid" column="departmentId" jdbcType="INTEGER"/>
+        <result property="joblevelid" column="jobLevelId" jdbcType="INTEGER"/>
+        <result property="posid" column="posId" jdbcType="INTEGER"/>
+        <result property="engageform" column="engageForm" jdbcType="VARCHAR"/>
+        <result property="tiptopdegree" column="tiptopDegree" jdbcType="OTHER"/>
+        <result property="specialty" column="specialty" jdbcType="VARCHAR"/>
+        <result property="school" column="school" jdbcType="VARCHAR"/>
+        <result property="begindate" column="beginDate" jdbcType="OTHER"/>
+        <result property="workstate" column="workState" jdbcType="OTHER"/>
+        <result property="workid" column="workID" jdbcType="VARCHAR"/>
+        <result property="contractterm" column="contractTerm" jdbcType="OTHER"/>
+        <result property="conversiontime" column="conversionTime" jdbcType="OTHER"/>
+        <result property="notworkdate" column="notWorkDate" jdbcType="OTHER"/>
+        <result property="begincontract" column="beginContract" jdbcType="OTHER"/>
+        <result property="endcontract" column="endContract" jdbcType="OTHER"/>
+        <result property="workage" column="workAge" jdbcType="INTEGER"/>
+        <result property="salaryid" column="salaryId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--新增所有列-->
+    <insert id="insert" parameterType="com.hcy.server.model.entity.EmployeeEntity">
+        insert into yeb.t_employee(id, name, gender, birthday, idCard, wedlock, nationId, nativePlace, politicId, email, phone, address, departmentId, jobLevelId, posId, engageForm, tiptopDegree, specialty, school, beginDate, workState, workID, contractTerm, conversionTime, notWorkDate, beginContract, endContract, workAge, salaryId)
+        values (#{id}, #{name}, #{gender}, #{birthday}, #{idcard}, #{wedlock}, #{nationid}, #{nativeplace}, #{politicid}, #{email}, #{phone}, #{address}, #{departmentid}, #{joblevelid}, #{posid}, #{engageform}, #{tiptopdegree}, #{specialty}, #{school}, #{begindate}, #{workstate}, #{workid}, #{contractterm}, #{conversiontime}, #{notworkdate}, #{begincontract}, #{endcontract}, #{workage}, #{salaryid})
+    </insert>
+    
+    <!--查询单个-->
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+          id, name, gender, birthday, idCard, wedlock, nationId, nativePlace, politicId, email, phone, address, departmentId, jobLevelId, posId, engageForm, tiptopDegree, specialty, school, beginDate, workState, workID, contractTerm, conversionTime, notWorkDate, beginContract, endContract, workAge, salaryId
+        from yeb.t_employee
+        where id = #{id}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, name, gender, birthday, idCard, wedlock, nationId, nativePlace, politicId, email, phone, address, departmentId, jobLevelId, posId, engageForm, tiptopDegree, specialty, school, beginDate, workState, workID, contractTerm, conversionTime, notWorkDate, beginContract, endContract, workAge, salaryId
+        from yeb.t_employee
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, name, gender, birthday, idCard, wedlock, nationId, nativePlace, politicId, email, phone, address, departmentId, jobLevelId, posId, engageForm, tiptopDegree, specialty, school, beginDate, workState, workID, contractTerm, conversionTime, notWorkDate, beginContract, endContract, workAge, salaryId
+        from yeb.t_employee
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="gender != null and gender != ''">
+                and gender = #{gender}
+            </if>
+            <if test="birthday != null">
+                and birthday = #{birthday}
+            </if>
+            <if test="idcard != null and idcard != ''">
+                and idCard = #{idcard}
+            </if>
+            <if test="wedlock != null">
+                and wedlock = #{wedlock}
+            </if>
+            <if test="nationid != null">
+                and nationId = #{nationid}
+            </if>
+            <if test="nativeplace != null and nativeplace != ''">
+                and nativePlace = #{nativeplace}
+            </if>
+            <if test="politicid != null">
+                and politicId = #{politicid}
+            </if>
+            <if test="email != null and email != ''">
+                and email = #{email}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="departmentid != null">
+                and departmentId = #{departmentid}
+            </if>
+            <if test="joblevelid != null">
+                and jobLevelId = #{joblevelid}
+            </if>
+            <if test="posid != null">
+                and posId = #{posid}
+            </if>
+            <if test="engageform != null and engageform != ''">
+                and engageForm = #{engageform}
+            </if>
+            <if test="tiptopdegree != null">
+                and tiptopDegree = #{tiptopdegree}
+            </if>
+            <if test="specialty != null and specialty != ''">
+                and specialty = #{specialty}
+            </if>
+            <if test="school != null and school != ''">
+                and school = #{school}
+            </if>
+            <if test="begindate != null">
+                and beginDate = #{begindate}
+            </if>
+            <if test="workstate != null">
+                and workState = #{workstate}
+            </if>
+            <if test="workid != null and workid != ''">
+                and workID = #{workid}
+            </if>
+            <if test="contractterm != null">
+                and contractTerm = #{contractterm}
+            </if>
+            <if test="conversiontime != null">
+                and conversionTime = #{conversiontime}
+            </if>
+            <if test="notworkdate != null">
+                and notWorkDate = #{notworkdate}
+            </if>
+            <if test="begincontract != null">
+                and beginContract = #{begincontract}
+            </if>
+            <if test="endcontract != null">
+                and endContract = #{endcontract}
+            </if>
+            <if test="workage != null">
+                and workAge = #{workage}
+            </if>
+            <if test="salaryid != null">
+                and salaryId = #{salaryid}
+            </if>
+        </where>
+    </select>
+
+    <!--通过主键修改数据-->
+    <update id="updateById">
+        update
+            yeb.t_employee
+        <set>
+            <if test="et.name != null and et.name != ''">
+                name = #{et.name},
+            </if>
+            <if test="et.gender != null and et.gender != ''">
+                gender = #{et.gender},
+            </if>
+            <if test="et.birthday != null">
+                birthday = #{et.birthday},
+            </if>
+            <if test="et.idcard != null and et.idcard != ''">
+                idCard = #{et.idcard},
+            </if>
+            <if test="et.wedlock != null">
+                wedlock = #{et.wedlock},
+            </if>
+            <if test="et.nationid != null">
+                nationId = #{et.nationid},
+            </if>
+            <if test="et.nativeplace != null and et.nativeplace != ''">
+                nativePlace = #{et.nativeplace},
+            </if>
+            <if test="et.politicid != null">
+                politicId = #{et.politicid},
+            </if>
+            <if test="et.email != null and et.email != ''">
+                email = #{et.email},
+            </if>
+            <if test="et.phone != null and et.phone != ''">
+                phone = #{et.phone},
+            </if>
+            <if test="et.address != null and et.address != ''">
+                address = #{et.address},
+            </if>
+            <if test="et.departmentid != null">
+                departmentId = #{et.departmentid},
+            </if>
+            <if test="et.joblevelid != null">
+                jobLevelId = #{et.joblevelid},
+            </if>
+            <if test="et.posid != null">
+                posId = #{et.posid},
+            </if>
+            <if test="et.engageform != null and et.engageform != ''">
+                engageForm = #{et.engageform},
+            </if>
+            <if test="et.tiptopdegree != null">
+                tiptopDegree = #{et.tiptopdegree},
+            </if>
+            <if test="et.specialty != null and et.specialty != ''">
+                specialty = #{et.specialty},
+            </if>
+            <if test="et.school != null and et.school != ''">
+                school = #{et.school},
+            </if>
+            <if test="et.begindate != null">
+                beginDate = #{et.begindate},
+            </if>
+            <if test="et.workstate != null">
+                workState = #{et.workstate},
+            </if>
+            <if test="et.workid != null and et.workid != ''">
+                workID = #{et.workid},
+            </if>
+            <if test="et.contractterm != null">
+                contractTerm = #{et.contractterm},
+            </if>
+            <if test="et.conversiontime != null">
+                conversionTime = #{et.conversiontime},
+            </if>
+            <if test="et.notworkdate != null">
+                notWorkDate = #{et.notworkdate},
+            </if>
+            <if test="et.begincontract != null">
+                beginContract = #{et.begincontract},
+            </if>
+            <if test="et.endcontract != null">
+                endContract = #{et.endcontract},
+            </if>
+            <if test="et.workage != null">
+                workAge = #{et.workage},
+            </if>
+            <if test="et.salaryid != null">
+                salaryId = #{et.salaryid},
+            </if>
+        </set>
+        where id = #{et.id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from yeb.t_employee where id = #{id}
+    </delete>
+</mapper>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcy.server.mapper.OplogMapper">
+
+    <resultMap id="BaseResultMap" type="com.hcy.server.model.entity.OplogEntity">
+        <!--@Table t_oplog-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="adddate" column="addDate" jdbcType="OTHER"/>
+        <result property="operate" column="operate" jdbcType="VARCHAR"/>
+        <result property="adminid" column="adminid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--新增所有列-->
+    <insert id="insert" parameterType="com.hcy.server.model.entity.OplogEntity">
+        insert into yeb.t_oplog(id, addDate, operate, adminid)
+        values (#{id}, #{adddate}, #{operate}, #{adminid})
+    </insert>
+    
+    <!--查询单个-->
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+          id, addDate, operate, adminid
+        from yeb.t_oplog
+        where id = #{id}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, addDate, operate, adminid
+        from yeb.t_oplog
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, addDate, operate, adminid
+        from yeb.t_oplog
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="adddate != null">
+                and addDate = #{adddate}
+            </if>
+            <if test="operate != null and operate != ''">
+                and operate = #{operate}
+            </if>
+            <if test="adminid != null">
+                and adminid = #{adminid}
+            </if>
+        </where>
+    </select>
+
+    <!--通过主键修改数据-->
+    <update id="updateById">
+        update
+            yeb.t_oplog
+        <set>
+            <if test="et.adddate != null">
+                addDate = #{et.adddate},
+            </if>
+            <if test="et.operate != null and et.operate != ''">
+                operate = #{et.operate},
+            </if>
+            <if test="et.adminid != null">
+                adminid = #{et.adminid},
+            </if>
+        </set>
+        where id = #{et.id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from yeb.t_oplog where id = #{id}
+    </delete>
+</mapper>

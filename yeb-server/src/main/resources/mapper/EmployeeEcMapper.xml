@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcy.server.mapper.EmployeeEcMapper">
+
+    <resultMap id="BaseResultMap" type="com.hcy.server.model.entity.EmployeeEcEntity">
+        <!--@Table t_employee_ec-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="eid" column="eid" jdbcType="INTEGER"/>
+        <result property="ecdate" column="ecDate" jdbcType="OTHER"/>
+        <result property="ecreason" column="ecReason" jdbcType="VARCHAR"/>
+        <result property="ecpoint" column="ecPoint" jdbcType="INTEGER"/>
+        <result property="ectype" column="ecType" jdbcType="INTEGER"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--新增所有列-->
+    <insert id="insert" parameterType="com.hcy.server.model.entity.EmployeeEcEntity">
+        insert into yeb.t_employee_ec(id, eid, ecDate, ecReason, ecPoint, ecType, remark)
+        values (#{id}, #{eid}, #{ecdate}, #{ecreason}, #{ecpoint}, #{ectype}, #{remark})
+    </insert>
+    
+    <!--查询单个-->
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+          id, eid, ecDate, ecReason, ecPoint, ecType, remark
+        from yeb.t_employee_ec
+        where id = #{id}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, eid, ecDate, ecReason, ecPoint, ecType, remark
+        from yeb.t_employee_ec
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, eid, ecDate, ecReason, ecPoint, ecType, remark
+        from yeb.t_employee_ec
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="eid != null">
+                and eid = #{eid}
+            </if>
+            <if test="ecdate != null">
+                and ecDate = #{ecdate}
+            </if>
+            <if test="ecreason != null and ecreason != ''">
+                and ecReason = #{ecreason}
+            </if>
+            <if test="ecpoint != null">
+                and ecPoint = #{ecpoint}
+            </if>
+            <if test="ectype != null">
+                and ecType = #{ectype}
+            </if>
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
+            </if>
+        </where>
+    </select>
+
+    <!--通过主键修改数据-->
+    <update id="updateById">
+        update
+            yeb.t_employee_ec
+        <set>
+            <if test="et.eid != null">
+                eid = #{et.eid},
+            </if>
+            <if test="et.ecdate != null">
+                ecDate = #{et.ecdate},
+            </if>
+            <if test="et.ecreason != null and et.ecreason != ''">
+                ecReason = #{et.ecreason},
+            </if>
+            <if test="et.ecpoint != null">
+                ecPoint = #{et.ecpoint},
+            </if>
+            <if test="et.ectype != null">
+                ecType = #{et.ectype},
+            </if>
+            <if test="et.remark != null and et.remark != ''">
+                remark = #{et.remark},
+            </if>
+        </set>
+        where id = #{et.id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from yeb.t_employee_ec where id = #{id}
+    </delete>
+</mapper>

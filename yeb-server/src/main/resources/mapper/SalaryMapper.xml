@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcy.server.mapper.SalaryMapper">
+
+    <resultMap id="BaseResultMap" type="com.hcy.server.model.entity.SalaryEntity">
+        <!--@Table t_salary-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="basicsalary" column="basicSalary" jdbcType="INTEGER"/>
+        <result property="bonus" column="bonus" jdbcType="INTEGER"/>
+        <result property="lunchsalary" column="lunchSalary" jdbcType="INTEGER"/>
+        <result property="trafficsalary" column="trafficSalary" jdbcType="INTEGER"/>
+        <result property="allsalary" column="allSalary" jdbcType="INTEGER"/>
+        <result property="pensionbase" column="pensionBase" jdbcType="INTEGER"/>
+        <result property="pensionper" column="pensionPer" jdbcType="OTHER"/>
+        <result property="createdate" column="createDate" jdbcType="TIMESTAMP"/>
+        <result property="medicalbase" column="medicalBase" jdbcType="INTEGER"/>
+        <result property="medicalper" column="medicalPer" jdbcType="OTHER"/>
+        <result property="accumulationfundbase" column="accumulationFundBase" jdbcType="INTEGER"/>
+        <result property="accumulationfundper" column="accumulationFundPer" jdbcType="OTHER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--新增所有列-->
+    <insert id="insert" parameterType="com.hcy.server.model.entity.SalaryEntity">
+        insert into yeb.t_salary(id, basicSalary, bonus, lunchSalary, trafficSalary, allSalary, pensionBase, pensionPer, createDate, medicalBase, medicalPer, accumulationFundBase, accumulationFundPer, name)
+        values (#{id}, #{basicsalary}, #{bonus}, #{lunchsalary}, #{trafficsalary}, #{allsalary}, #{pensionbase}, #{pensionper}, #{createdate}, #{medicalbase}, #{medicalper}, #{accumulationfundbase}, #{accumulationfundper}, #{name})
+    </insert>
+    
+    <!--查询单个-->
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+          id, basicSalary, bonus, lunchSalary, trafficSalary, allSalary, pensionBase, pensionPer, createDate, medicalBase, medicalPer, accumulationFundBase, accumulationFundPer, name
+        from yeb.t_salary
+        where id = #{id}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, basicSalary, bonus, lunchSalary, trafficSalary, allSalary, pensionBase, pensionPer, createDate, medicalBase, medicalPer, accumulationFundBase, accumulationFundPer, name
+        from yeb.t_salary
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, basicSalary, bonus, lunchSalary, trafficSalary, allSalary, pensionBase, pensionPer, createDate, medicalBase, medicalPer, accumulationFundBase, accumulationFundPer, name
+        from yeb.t_salary
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="basicsalary != null">
+                and basicSalary = #{basicsalary}
+            </if>
+            <if test="bonus != null">
+                and bonus = #{bonus}
+            </if>
+            <if test="lunchsalary != null">
+                and lunchSalary = #{lunchsalary}
+            </if>
+            <if test="trafficsalary != null">
+                and trafficSalary = #{trafficsalary}
+            </if>
+            <if test="allsalary != null">
+                and allSalary = #{allsalary}
+            </if>
+            <if test="pensionbase != null">
+                and pensionBase = #{pensionbase}
+            </if>
+            <if test="pensionper != null">
+                and pensionPer = #{pensionper}
+            </if>
+            <if test="createdate != null">
+                and createDate = #{createdate}
+            </if>
+            <if test="medicalbase != null">
+                and medicalBase = #{medicalbase}
+            </if>
+            <if test="medicalper != null">
+                and medicalPer = #{medicalper}
+            </if>
+            <if test="accumulationfundbase != null">
+                and accumulationFundBase = #{accumulationfundbase}
+            </if>
+            <if test="accumulationfundper != null">
+                and accumulationFundPer = #{accumulationfundper}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
+
+    <!--通过主键修改数据-->
+    <update id="updateById">
+        update
+            yeb.t_salary
+        <set>
+            <if test="et.basicsalary != null">
+                basicSalary = #{et.basicsalary},
+            </if>
+            <if test="et.bonus != null">
+                bonus = #{et.bonus},
+            </if>
+            <if test="et.lunchsalary != null">
+                lunchSalary = #{et.lunchsalary},
+            </if>
+            <if test="et.trafficsalary != null">
+                trafficSalary = #{et.trafficsalary},
+            </if>
+            <if test="et.allsalary != null">
+                allSalary = #{et.allsalary},
+            </if>
+            <if test="et.pensionbase != null">
+                pensionBase = #{et.pensionbase},
+            </if>
+            <if test="et.pensionper != null">
+                pensionPer = #{et.pensionper},
+            </if>
+            <if test="et.createdate != null">
+                createDate = #{et.createdate},
+            </if>
+            <if test="et.medicalbase != null">
+                medicalBase = #{et.medicalbase},
+            </if>
+            <if test="et.medicalper != null">
+                medicalPer = #{et.medicalper},
+            </if>
+            <if test="et.accumulationfundbase != null">
+                accumulationFundBase = #{et.accumulationfundbase},
+            </if>
+            <if test="et.accumulationfundper != null">
+                accumulationFundPer = #{et.accumulationfundper},
+            </if>
+            <if test="et.name != null and et.name != ''">
+                name = #{et.name},
+            </if>
+        </set>
+        where id = #{et.id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from yeb.t_salary where id = #{id}
+    </delete>
+</mapper>

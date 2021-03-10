@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcy.server.mapper.SysMsgMapper">
+
+    <resultMap id="BaseResultMap" type="com.hcy.server.model.entity.SysMsgEntity">
+        <!--@Table t_sys_msg-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="mid" column="mid" jdbcType="INTEGER"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="adminid" column="adminid" jdbcType="INTEGER"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--新增所有列-->
+    <insert id="insert" parameterType="com.hcy.server.model.entity.SysMsgEntity">
+        insert into yeb.t_sys_msg(id, mid, type, adminid, state)
+        values (#{id}, #{mid}, #{type}, #{adminid}, #{state})
+    </insert>
+    
+    <!--查询单个-->
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+          id, mid, type, adminid, state
+        from yeb.t_sys_msg
+        where id = #{id}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, mid, type, adminid, state
+        from yeb.t_sys_msg
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, mid, type, adminid, state
+        from yeb.t_sys_msg
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="mid != null">
+                and mid = #{mid}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="adminid != null">
+                and adminid = #{adminid}
+            </if>
+            <if test="state != null">
+                and state = #{state}
+            </if>
+        </where>
+    </select>
+
+    <!--通过主键修改数据-->
+    <update id="updateById">
+        update
+            yeb.t_sys_msg
+        <set>
+            <if test="et.mid != null">
+                mid = #{et.mid},
+            </if>
+            <if test="et.type != null">
+                type = #{et.type},
+            </if>
+            <if test="et.adminid != null">
+                adminid = #{et.adminid},
+            </if>
+            <if test="et.state != null">
+                state = #{et.state},
+            </if>
+        </set>
+        where id = #{et.id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from yeb.t_sys_msg where id = #{id}
+    </delete>
+</mapper>
