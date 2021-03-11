@@ -46,11 +46,12 @@ spring:
 mybatis-plus:
   configuration:
     # log输出标准
-        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     # 开启下滑线驼峰转换
     map-underscore-to-camel-case: false
     # 指定默认枚举类型的类型转换器
     default-enum-type-handler: com.baomidou.mybatisplus.extension.handlers.MybatisEnumTypeHandler
+
   global-config:
     # 开启/关闭 banner 打印
     banner: false
@@ -59,9 +60,10 @@ mybatis-plus:
       logic-delete-value: NOW()
       logic-not-delete-value: 'NULL'
   # 映射的实体类
-  type-aliases-package: com.hcy.yeb.model.entity
+  type-aliases-package: com.hcy.server.model.entity
   # mapper路径位置
   mapper-locations:  classpath:mapper/*.xml
+
 ## Mybatis SQL 打印(方法接口所在的包，不是Mapper.xml所在的包)
 logging:
   level:

@@ -7,8 +7,9 @@ import com.hcy.server.mapper.AdminMapper;
 import com.hcy.server.model.entity.AdminEntity;
 import com.hcy.server.model.vo.ResponseResult;
 import com.hcy.server.service.AdminService;
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -44,6 +45,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, AdminEntity> impl
 
     @Value("${jwt.tokenHead}")
     private String tokenHead;
+
     /**
      * 登录之后返回 TOKEN
      * @param username
@@ -54,7 +56,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, AdminEntity> impl
     @Override
     public ResponseResult login(String username, String password, HttpServletRequest httpServletRequest) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-        if(Optional.ofNullable(userDetails).isPresent() || !passwordEncoder.matches(password, userDetails.getPassword())){
+        if(!Optional.ofNullable(userDetails).isPresent() || !passwordEncoder.matches(password, userDetails.getPassword())){
             return ResponseResult.fail("用户名或密码不正确");
         }
         if(!userDetails.isEnabled()){

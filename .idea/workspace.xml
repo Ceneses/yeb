@@ -1,7 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91c3ec59-b08c-4ad1-ac90-6395597dcab2" name="Default Changelist" comment="" />
+    <list default="true" id="91c3ec59-b08c-4ad1-ac90-6395597dcab2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/JwtAuthencationTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/RestAuthorizationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/RestfulAccessDeniedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/swagger/Swagger2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TAdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TAdminRoleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TAppraiseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TDepartmentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TEmployeeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TEmployeeEcController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TEmployeeRemoveController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TEmployeeTrainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TJoblevelController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TMailLogController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TMenuRoleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TNationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TOplogController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TPoliticsStatusController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TPositionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TRoleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TSalaryAdjustController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TSalaryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TSysMsgContentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/TSysMsgController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TAdminMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TAdminRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TAppraiseMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TDepartmentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TEmployeeEcMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TEmployeeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TEmployeeRemoveMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TEmployeeTrainMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TJoblevelMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TMailLogMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TMenuMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TMenuRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TNationMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TOplogMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TPoliticsStatusMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TPositionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TSalaryAdjustMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TSalaryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TSysMsgContentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/TSysMsgMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TAdminRoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TAdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TAppraiseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TDepartmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TEmployeeEcService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TEmployeeRemoveService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TEmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TEmployeeTrainService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TJoblevelService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TMailLogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TMenuRoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TMenuService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TNationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TOplogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TPoliticsStatusService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TPositionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TRoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TSalaryAdjustService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TSalaryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TSysMsgContentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/TSysMsgService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TAdminRoleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TAdminServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TAppraiseServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TDepartmentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TEmployeeEcServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TEmployeeRemoveServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TEmployeeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TEmployeeTrainServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TJoblevelServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TMailLogServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TMenuRoleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TMenuServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TNationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TOplogServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TPoliticsStatusServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TPositionServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TRoleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TSalaryAdjustServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TSalaryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TSysMsgContentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/TSysMsgServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/config/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/MailLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/MailLogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/yeb-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/yeb-server.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +153,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -60,24 +164,50 @@
     </option>
   </component>
   <component name="ProjectId" id="1pY9ufws3AKz1WBtxLIt9N9wNqR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IDEA\WorkSpace\yeb\yeb-server\src\main\resources\config" />
+      <recent name="D:\IDEA\WorkSpace\yeb\yeb-server\src\main\resources" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="YebApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="yeb-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hcy.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hcy.server.YebApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.YebApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -106,7 +236,11 @@
       <updated>1615349380151</updated>
       <workItem from="1615349381724" duration="3631000" />
       <workItem from="1615364330075" duration="377000" />
-      <workItem from="1615364710401" duration="10832000" />
+      <workItem from="1615364710401" duration="11329000" />
+      <workItem from="1615438379503" duration="10379000" />
+      <workItem from="1615451714283" duration="91000" />
+      <workItem from="1615451815531" duration="45000" />
+      <workItem from="1615451877776" duration="567000" />
     </task>
     <servers />
   </component>
@@ -122,10 +256,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615364401877" />
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1615384198763">
+    <state x="399" y="100" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1615450005299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615384198763" />
+    <state x="399" y="100" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615450005299" />
+    <state x="574" y="129" width="670" height="579" key="#com.intellij.ide.util.MemberChooser" timestamp="1615448039394">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="129" width="670" height="579" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615448039394" />
     <state x="499" y="188" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1615365972749">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -138,14 +276,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615378801045" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615367649268">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615449427009">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615367649268" />
-    <state x="270" y="55" key="SettingsEditor" timestamp="1615366830490">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615449427009" />
+    <state width="1493" height="300" key="GridCell.Tab.0.bottom" timestamp="1615452350988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="55" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615366830490" />
+    <state width="1493" height="300" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452350988" />
+    <state width="1493" height="300" key="GridCell.Tab.0.center" timestamp="1615452350987">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="300" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452350987" />
+    <state width="1493" height="300" key="GridCell.Tab.0.left" timestamp="1615452350987">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="300" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452350987" />
+    <state width="1493" height="300" key="GridCell.Tab.0.right" timestamp="1615452350988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="300" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452350988" />
+    <state width="1493" height="300" key="GridCell.Tab.1.bottom" timestamp="1615452350988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="300" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452350988" />
+    <state width="1493" height="300" key="GridCell.Tab.1.center" timestamp="1615452350988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="300" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452350988" />
+    <state width="1493" height="300" key="GridCell.Tab.1.left" timestamp="1615452350988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="300" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452350988" />
+    <state width="1493" height="300" key="GridCell.Tab.1.right" timestamp="1615452350988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="300" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452350988" />
+    <state x="210" y="17" width="1128" height="714" key="SettingsEditor" timestamp="1615451429805">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="210" y="17" width="1128" height="714" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615451429805" />
     <state x="178" y="0" key="new project wizard" timestamp="1615351696931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

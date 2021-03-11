@@ -1,10 +1,13 @@
 package com.hcy.server.config.security;
 
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
-import java.awt.*;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,20 +19,33 @@ import java.util.Map;
  * @Date 2021/3/10 17:11
  * @Version 1.0
  **/
-
+@Component
 public class JwtTokenUtil {
+    /**
+     * 所有权的 KEY : 用户名
+     */
     private static final String CLAIM_KEY_USERNAME = "sub";
 
+    /**
+     * 所有权 KEY : 创建日期
+     */
     private static final String CLAIM_KEY_CREATED = "created";
 
+    /**
+     * 加密 * 解密 密钥
+     */
     @Value("${jwt.secret}")
     private String secret;
 
+    /**
+     * 过期时间
+     */
     @Value("${jwt.expiration}")
     private Long expiration;
 
     /**
-     * 根据用户信息生成Token
+     * 如果该用户存在，那么就会从数据库中查询到用户信息 UserDetails
+     * 根据用户信息 UserDetails 生成 Token
      * @param userDetails
      * @return
      */
@@ -42,6 +58,10 @@ public class JwtTokenUtil {
 
     /**
      * 根据 声明 生成 JWT TOKEN
+     * JWT 工具会根据所有权进行生成 TOKEN
+     * - 所有权
+     * - 过期时间
+     * - 密钥
      * @param claims
      * @return
      */
