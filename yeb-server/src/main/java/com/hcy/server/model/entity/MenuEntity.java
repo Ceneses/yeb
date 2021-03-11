@@ -1,6 +1,7 @@
 package com.hcy.server.model.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -84,4 +85,8 @@ public class MenuEntity implements Serializable {
     */
     @TableField("enabled")
     private Object enabled;
+
+
+    @TableField(exist = false)
+    private List<MenuEntity> children;
 }

@@ -2,9 +2,11 @@ package com.hcy.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hcy.server.model.entity.AdminEntity;
+import com.hcy.server.model.entity.MenuEntity;
 import com.hcy.server.model.vo.ResponseResult;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * (Admin)表服务接口
@@ -28,4 +30,10 @@ public interface AdminService extends IService<AdminEntity> {
      * @return
      */
     AdminEntity getAdminByUsername(String userName);
+
+    /**
+     * 通过用户ID查询菜单列表
+     * @return
+     */
+    List<MenuEntity> getMenusByAdminId();
 }

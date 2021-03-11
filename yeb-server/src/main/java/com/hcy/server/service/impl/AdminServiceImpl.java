@@ -5,12 +5,13 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hcy.server.config.security.JwtTokenUtil;
 import com.hcy.server.mapper.AdminMapper;
 import com.hcy.server.model.entity.AdminEntity;
+import com.hcy.server.model.entity.MenuEntity;
 import com.hcy.server.model.vo.ResponseResult;
 import com.hcy.server.service.AdminService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,6 +21,7 @@ import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -56,8 +58,9 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, AdminEntity> impl
      */
     @Override
     public ResponseResult login(String username, String password, String code, HttpServletRequest httpServletRequest) {
-        String captcha = (String) httpServletRequest.getSession().getAttribute("captcha");
-        if(StringUtils.isEmpty(captcha)||!captcha.equalsIgnoreCase(code)){
+        String captcha = (String) httpServletRequest.getSession(true).getAttribute("captcha");
+
+        if(StringUtils.isEmpty(captcha)||(!captcha.equalsIgnoreCase(code))){
             return ResponseResult.fail("验证码输入错误，请重新输入!");
         }
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
@@ -65,7 +68,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, AdminEntity> impl
             return ResponseResult.fail("用户名或密码不正确");
         }
         if(!userDetails.isEnabled()){
-            return ResponseResult.fail("账号被警用！请联系管理员");
+            return ResponseResult.fail("账号被禁用！请联系管理员");
         }
         // 更新security登录用户对象
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
@@ -81,5 +84,14 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, AdminEntity> impl
     @Override
     public AdminEntity getAdminByUsername(String userName) {
         return adminMapper.selectOne(new QueryWrapper<AdminEntity>().eq("username",userName).eq("enabled",true));
+    }
+
+    /**
+     * 通过用户ID查询菜单列表
+     * @return
+     */
+    @Override
+    public List<MenuEntity> getMenusByAdminId() {
+        return adminMapper.getMenusByAdminId(((AdminEntity)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
     }
 }

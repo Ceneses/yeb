@@ -1,0 +1,80 @@
+# 服务器
+server:
+  port: 8181
+  servlet:
+    context-path: /yeb
+
+# Spring配置信息
+spring:
+  # 数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/yeb?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      # 连接池名
+      pool-name: DateHikariCP
+      # 最小空闲连接数
+      minimum-idle: 5
+      # 空闲连接存活最大时间，默认600000(10分钟)
+      idle-timeout: 180000
+      # 最大连接数，默认10
+      maximum-pool-size: 10
+      # 从连接池返回的连接的自动提交
+      auto-commit: true
+      # 连接最大存活时间, 0表示永久存活， 默认1800000(30分钟)
+      max-lifetime: 1800000
+      # 连接超时时间，默认30000(30秒)
+      connection-timeout: 30000
+      # 测试连接是否可用的查询语句
+      connection-test-query: SELECT 1
+  application:
+    name: yeb
+  # 配置邮箱发送方信息
+  mail:
+    host: smtp.163.com
+    username: wo51study@163.com  # 邮箱地址
+    password: iloveenglish # 授权码
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+
+# Mybatis-Plus配置信息
+mybatis-plus:
+  configuration:
+    # log输出标准
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 开启下滑线驼峰转换
+    map-underscore-to-camel-case: false
+    # 指定默认枚举类型的类型转换器
+    default-enum-type-handler: com.baomidou.mybatisplus.extension.handlers.MybatisEnumTypeHandler
+
+  global-config:
+    # 开启/关闭 banner 打印
+    banner: false
+    db-config:
+      # 逻辑删除（软删除）
+      logic-delete-value: NOW()
+      logic-not-delete-value: 'NULL'
+  # 映射的实体类
+  type-aliases-package: com.hcy.server.model.entity
+  # mapper路径位置
+  mapper-locations:  classpath:mapper/*.xml
+
+## Mybatis SQL 打印(方法接口所在的包，不是Mapper.xml所在的包)
+logging:
+  level:
+    com.hcy.server.mapper: debug
+
+jwt:
+  # JWT存储的请求头
+  tokenHeader: Authorization
+  # JWT加解密使用的密钥
+  security: yeb-secret
+  # JWT的超期时间(60 * 60 * 24)
+  expiration: 604800
+  # JWT 负载中拿到开头
+  tokenHead: Bearer

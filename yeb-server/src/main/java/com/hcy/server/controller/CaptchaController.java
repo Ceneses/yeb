@@ -36,8 +36,8 @@ public class CaptchaController {
         httpServletResponse.setContentType("image/jpeg");
 
         String text = defaultKaptcha.createText();
-        System.out.println("验证码内容 = " + text);
-        httpServletRequest.getSession().setAttribute("captcha",text);
+        httpServletRequest.getSession(true).setAttribute("captcha",text);
+        System.out.println("验证码是 = " + text);
         BufferedImage image = defaultKaptcha.createImage(text);
         ServletOutputStream outputStream = null;
         try {

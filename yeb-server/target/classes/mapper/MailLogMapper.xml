@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcy.server.mapper.MailLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.hcy.server.model.entity.MailLogEntity">
+        <!--@Table t_mail_log-->
+        <result property="msgid" column="msgId" jdbcType="VARCHAR"/>
+        <result property="eid" column="eid" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="routekey" column="routeKey" jdbcType="VARCHAR"/>
+        <result property="exchange" column="exchange" jdbcType="VARCHAR"/>
+        <result property="count" column="count" jdbcType="INTEGER"/>
+        <result property="trytime" column="tryTime" jdbcType="TIMESTAMP"/>
+        <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
+        <result property="updatetime" column="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+
+
+</mapper>

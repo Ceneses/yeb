@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcy.server.mapper.AppraiseMapper">
+
+    <resultMap id="BaseResultMap" type="com.hcy.server.model.entity.AppraiseEntity">
+        <!--@Table t_appraise-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="eid" column="eid" jdbcType="INTEGER"/>
+        <result property="appdate" column="appDate" jdbcType="OTHER"/>
+        <result property="appresult" column="appResult" jdbcType="VARCHAR"/>
+        <result property="appcontent" column="appContent" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--新增所有列-->
+    <insert id="insert" parameterType="com.hcy.server.model.entity.AppraiseEntity">
+        insert into yeb.t_appraise(id, eid, appDate, appResult, appContent, remark)
+        values (#{id}, #{eid}, #{appdate}, #{appresult}, #{appcontent}, #{remark})
+    </insert>
+    
+    <!--查询单个-->
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+          id, eid, appDate, appResult, appContent, remark
+        from yeb.t_appraise
+        where id = #{id}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, eid, appDate, appResult, appContent, remark
+        from yeb.t_appraise
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, eid, appDate, appResult, appContent, remark
+        from yeb.t_appraise
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="eid != null">
+                and eid = #{eid}
+            </if>
+            <if test="appdate != null">
+                and appDate = #{appdate}
+            </if>
+            <if test="appresult != null and appresult != ''">
+                and appResult = #{appresult}
+            </if>
+            <if test="appcontent != null and appcontent != ''">
+                and appContent = #{appcontent}
+            </if>
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
+            </if>
+        </where>
+    </select>
+
+    <!--通过主键修改数据-->
+    <update id="updateById">
+        update
+            yeb.t_appraise
+        <set>
+            <if test="et.eid != null">
+                eid = #{et.eid},
+            </if>
+            <if test="et.appdate != null">
+                appDate = #{et.appdate},
+            </if>
+            <if test="et.appresult != null and et.appresult != ''">
+                appResult = #{et.appresult},
+            </if>
+            <if test="et.appcontent != null and et.appcontent != ''">
+                appContent = #{et.appcontent},
+            </if>
+            <if test="et.remark != null and et.remark != ''">
+                remark = #{et.remark},
+            </if>
+        </set>
+        where id = #{et.id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from yeb.t_appraise where id = #{id}
+    </delete>
+</mapper>

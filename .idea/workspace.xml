@@ -2,25 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91c3ec59-b08c-4ad1-ac90-6395597dcab2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_axet_kaptcha_0_0_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jhlabs_filters_2_0_235.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/captcha/CaptchaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/CaptchaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/cors/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/YebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/YebApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/JwtAuthencationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/JwtAuthencationTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/swagger/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/config/swagger/Swagger2Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/CaptchaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/model/entity/AdminLoginParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/model/entity/AdminLoginParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/mapper/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/model/entity/MenuEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/model/entity/MenuEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/hcy/server/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/yeb-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/yeb-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +67,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/Ceneses/yeb.git" />
+      </set>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -101,7 +100,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="com.bruce.plugin.ui.TemplateSettingPanel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -134,7 +133,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:yeb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:yeb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1558248d" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -160,7 +169,7 @@
       <workItem from="1615438379503" duration="10379000" />
       <workItem from="1615451714283" duration="91000" />
       <workItem from="1615451815531" duration="45000" />
-      <workItem from="1615451877776" duration="9212000" />
+      <workItem from="1615451877776" duration="18665000" />
     </task>
     <task id="LOCAL-00001" summary="modify">
       <created>1615452463766</created>
@@ -169,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615452463766</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加了登录接口">
+      <created>1615462901186</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615462901186</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +193,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="modify" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify" />
+    <MESSAGE value="添加了登录接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了登录接口" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Auto_Import" timestamp="1615460761482">
@@ -216,46 +233,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615449427009" />
-    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1615452462385">
+    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1615462900100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615452462385" />
-    <state width="1493" height="241" key="GridCell.Tab.0.bottom" timestamp="1615462789408">
+    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462900100" />
+    <state width="1493" height="215" key="GridCell.Tab.0.bottom" timestamp="1615471420934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462789408" />
-    <state width="1493" height="241" key="GridCell.Tab.0.center" timestamp="1615462789408">
+    <state width="1493" height="215" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471420934" />
+    <state width="1493" height="215" key="GridCell.Tab.0.center" timestamp="1615471420934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462789408" />
-    <state width="1493" height="241" key="GridCell.Tab.0.left" timestamp="1615462789408">
+    <state width="1493" height="215" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471420934" />
+    <state width="1493" height="215" key="GridCell.Tab.0.left" timestamp="1615471420933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462789408" />
-    <state width="1493" height="241" key="GridCell.Tab.0.right" timestamp="1615462789408">
+    <state width="1493" height="215" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471420933" />
+    <state width="1493" height="215" key="GridCell.Tab.0.right" timestamp="1615471420934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462789408" />
-    <state width="1493" height="241" key="GridCell.Tab.1.bottom" timestamp="1615462789408">
+    <state width="1493" height="215" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471420934" />
+    <state width="1493" height="215" key="GridCell.Tab.1.bottom" timestamp="1615471420934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462789408" />
-    <state width="1493" height="241" key="GridCell.Tab.1.center" timestamp="1615462789408">
+    <state width="1493" height="215" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471420934" />
+    <state width="1493" height="215" key="GridCell.Tab.1.center" timestamp="1615471420934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462789408" />
-    <state width="1493" height="241" key="GridCell.Tab.1.left" timestamp="1615462789408">
+    <state width="1493" height="215" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471420934" />
+    <state width="1493" height="215" key="GridCell.Tab.1.left" timestamp="1615471420934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462789408" />
-    <state width="1493" height="241" key="GridCell.Tab.1.right" timestamp="1615462789408">
+    <state width="1493" height="215" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471420934" />
+    <state width="1493" height="215" key="GridCell.Tab.1.right" timestamp="1615471420934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615462789408" />
-    <state x="210" y="17" width="1128" height="714" key="SettingsEditor" timestamp="1615460606466">
+    <state width="1493" height="215" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471420934" />
+    <state x="210" y="17" width="1128" height="714" key="SettingsEditor" timestamp="1615471257837">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="210" y="17" width="1128" height="714" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615460606466" />
+    <state x="210" y="17" width="1128" height="714" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615471257837" />
     <state x="178" y="0" key="new project wizard" timestamp="1615351696931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

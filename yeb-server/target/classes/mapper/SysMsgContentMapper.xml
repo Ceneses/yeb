@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcy.server.mapper.SysMsgContentMapper">
+
+    <resultMap id="BaseResultMap" type="com.hcy.server.model.entity.SysMsgContentEntity">
+        <!--@Table t_sys_msg_content-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="message" column="message" jdbcType="VARCHAR"/>
+        <result property="createdate" column="createDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--新增所有列-->
+    <insert id="insert" parameterType="com.hcy.server.model.entity.SysMsgContentEntity">
+        insert into yeb.t_sys_msg_content(id, title, message, createDate)
+        values (#{id}, #{title}, #{message}, #{createdate})
+    </insert>
+    
+    <!--查询单个-->
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+          id, title, message, createDate
+        from yeb.t_sys_msg_content
+        where id = #{id}
+    </select>
+    
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, title, message, createDate
+        from yeb.t_sys_msg_content
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, title, message, createDate
+        from yeb.t_sys_msg_content
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="title != null and title != ''">
+                and title = #{title}
+            </if>
+            <if test="message != null and message != ''">
+                and message = #{message}
+            </if>
+            <if test="createdate != null">
+                and createDate = #{createdate}
+            </if>
+        </where>
+    </select>
+
+    <!--通过主键修改数据-->
+    <update id="updateById">
+        update
+            yeb.t_sys_msg_content
+        <set>
+            <if test="et.title != null and et.title != ''">
+                title = #{et.title},
+            </if>
+            <if test="et.message != null and et.message != ''">
+                message = #{et.message},
+            </if>
+            <if test="et.createdate != null">
+                createDate = #{et.createdate},
+            </if>
+        </set>
+        where id = #{et.id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from yeb.t_sys_msg_content where id = #{id}
+    </delete>
+</mapper>

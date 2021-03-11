@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
-import java.util.Optional;
 
 /**
  * @ClassName LoginController
@@ -33,6 +32,11 @@ public class LoginController {
     @ApiOperation(value = "登录之后返回TOKEN")
     @PostMapping("/login")
     public ResponseResult login(@RequestBody AdminLoginParam adminLoginParam, HttpServletRequest httpServletRequest){
+        System.out.println(adminLoginParam.getCode());
+        System.out.println(adminLoginParam.getPassword());
+        System.out.println(adminLoginParam.getUsername());
+        System.out.println("从session获取的验证码：" + httpServletRequest.getSession().getAttribute("captcha"));
+
         return adminService.login(adminLoginParam.getUsername(),
                 adminLoginParam.getPassword(),
                 adminLoginParam.getCode(),
