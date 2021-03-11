@@ -4,6 +4,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -34,14 +36,14 @@ public class JwtTokenUtil {
     /**
      * 加密 * 解密 密钥
      */
-    @Value("${jwt.secret}")
+    @Value("yeb-secret")
     private String secret;
 
     /**
      * 过期时间
      */
-    @Value("${jwt.expiration}")
-    private Long expiration;
+
+    private Long expiration = 86400L;
 
     /**
      * 如果该用户存在，那么就会从数据库中查询到用户信息 UserDetails
@@ -69,7 +71,7 @@ public class JwtTokenUtil {
         return Jwts.builder()
                 .setClaims(claims)
                 .setExpiration(generateExpirationDate())
-                .signWith(SignatureAlgorithm.ES512, secret)
+                .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
 

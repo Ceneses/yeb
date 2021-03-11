@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -53,6 +54,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/login","/captcha","/hello","/test")
+                .antMatchers("/swagger-ui.html") // 任意访问
+                .antMatchers("/swagger-resources/**")
+                .antMatchers("/webjars/**")
+                .antMatchers("/v2/**")
+                .antMatchers("/api/**");
+    }
+
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 // 基于TOKEN，不需要Session
@@ -61,7 +72,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // 允许登录访问
-                .antMatchers("/login","logout").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

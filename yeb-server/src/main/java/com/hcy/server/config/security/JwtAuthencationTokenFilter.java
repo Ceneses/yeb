@@ -47,7 +47,7 @@ public class JwtAuthencationTokenFilter extends OncePerRequestFilter {
             if(null != userName && null == SecurityContextHolder.getContext().getAuthentication()){
                 UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
                 // 验证token是否有效，重新设置用户对象
-                if(jwtTokenUtil.validateToken(tokenHead,userDetails)){
+                if(jwtTokenUtil.validateToken(authToken,userDetails)){
                     UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                     usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
                     SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);

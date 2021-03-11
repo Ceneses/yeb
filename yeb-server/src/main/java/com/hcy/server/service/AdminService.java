@@ -20,7 +20,7 @@ public interface AdminService extends IService<AdminEntity> {
      * @param httpServletRequest
      * @return
      */
-    ResponseResult login(String username, String password, HttpServletRequest httpServletRequest);
+    ResponseResult login(String username, String password, String code, HttpServletRequest httpServletRequest);
 
     /**
      * 根据用户名查找Admin对象
